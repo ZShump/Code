@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
  * @Description
  */
 @Component
+
 public class NettyServerHandlerInitializer extends ChannelInitializer<Channel> {
 
     /**
