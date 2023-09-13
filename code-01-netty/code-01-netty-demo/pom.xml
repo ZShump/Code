@@ -13,5 +13,6 @@
     <modules>
         <module>code-01-netty-demo-server</module>
         <module>code-01-netty-demo-common</module>
+        <module>code-01-netty-demo-client</module>
     </modules>
 </project>

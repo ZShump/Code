@@ -1,5 +1,6 @@
 package com.shump.code.nettyserverdemo.server.handler;
 
+import com.shump.code.nettyserverdemo.server.NettyChannelManager;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
