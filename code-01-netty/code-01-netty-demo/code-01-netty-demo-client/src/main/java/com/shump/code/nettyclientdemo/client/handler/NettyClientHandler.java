@@ -1,6 +1,7 @@
 package com.shump.code.nettyclientdemo.client.handler;
 
 import com.shump.code.nettyclientdemo.client.NettyClient;
+import com.shump.code.nettycommondemo.codec.Invocation;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;

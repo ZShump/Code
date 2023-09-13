@@ -1,7 +1,12 @@
 package com.shump.code.nettyclientdemo.client.handler;
 
+import com.shump.code.nettycommondemo.codec.InvocationDecoder;
+import com.shump.code.nettycommondemo.codec.InvocationEncoder;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelPipeline;
+import io.netty.handler.timeout.IdleStateHandler;
+import io.netty.handler.timeout.ReadTimeoutHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +30,8 @@ public class NettyClientHandlerInitializer extends ChannelInitializer<Channel> {
     private NettyClientHandler nettyClientHandler;
     @Override
     protected void initChannel(Channel ch) throws Exception {
-        ch.pipeline()
+        ChannelPipeline channelPipeline = ch.pipeline();
+        channelPipeline
                 // 空闲检测
                 .addLast(new IdleStateHandler(READ_TIMEOUT_SECONDS, 0, 0))
                 .addLast(new ReadTimeoutHandler(3 * READ_TIMEOUT_SECONDS))

@@ -1,5 +1,6 @@
 package com.shump.code.nettyclientdemo.client;
 
+import com.shump.code.nettycommondemo.codec.Invocation;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;

@@ -1,5 +1,6 @@
 package com.shump.code.nettyserverdemo.server;
 
+import com.shump.code.nettycommondemo.codec.Invocation;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelId;
 import io.netty.util.AttributeKey;
