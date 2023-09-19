@@ -1,5 +1,6 @@
 package com.shump.code.nettyclientdemo.client;
 
+import com.shump.code.nettyclientdemo.client.handler.NettyClientHandlerInitializer;
 import com.shump.code.nettycommondemo.codec.Invocation;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author zcq
@@ -81,8 +83,20 @@ public class NettyClient {
     }
 
     public void reconnect() {
-        // ... 暂时省略代码。
+        eventGroup.schedule(new Runnable() {
+            @Override
+            public void run() {
+                logger.info("[reconnect][开始重连]");
+                try {
+                    start();
+                } catch (InterruptedException e) {
+                    logger.error("[reconnect][重连失败]", e);
+                }
+            }
+        }, RECONNECT_SECONDS, TimeUnit.SECONDS);
+        logger.info("[reconnect][{} 秒后将发起重连]", RECONNECT_SECONDS);
     }
+
 
     /**
      * 关闭 Netty Server
