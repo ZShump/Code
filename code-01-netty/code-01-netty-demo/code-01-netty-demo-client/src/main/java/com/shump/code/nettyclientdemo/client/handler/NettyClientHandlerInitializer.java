@@ -2,6 +2,7 @@ package com.shump.code.nettyclientdemo.client.handler;
 
 import com.shump.code.nettycommondemo.codec.InvocationDecoder;
 import com.shump.code.nettycommondemo.codec.InvocationEncoder;
+import com.shump.code.nettycommondemo.dispatcher.MessageDispatcher;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
